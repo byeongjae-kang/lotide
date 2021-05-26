@@ -19,15 +19,21 @@ const assertArraysEqual = function(array1, array2) {
 };
 
 const middle = function(array) {
-  check array if there is or are middle value in the array
+  const output = [];
 
-  check if the number of values in the array is odd number or even number
-  if even number 
+  if (array.length % 2 === 0 && array.length > 2) {
+    output.push(array[Math.floor((array.length - 1) / 2)]);
+    output.push(array[Math.ceil((array.length - 1) / 2)]);
+  } else if (array.length % 2 !== 0 && array.length > 2) {
+    output.push(array[(array.length - 1) / 2]);
+  }
+  
+  return output;
 };
 
-middle([1]) // => []
-middle([1, 2]) // => []
-middle([1, 2, 3]) // => [2]
-middle([1, 2, 3, 4, 5]) // => [3]
-middle([1, 2, 3, 4]) // => [2, 3]
-middle([1, 2, 3, 4, 5, 6]) // => [3, 4]
+console.log(middle([1])); // => []
+console.log(middle([1, 2])); // => []
+console.log(middle([1, 2, 3])); // => [2]
+console.log(middle([1, 2, 3, 4, 5])); // => [3]
+console.log(middle([1, 2, 3, 4])); // => [2, 3]
+console.log(middle([1, 2, 3, 4, 5, 6])); // => [3, 4]
