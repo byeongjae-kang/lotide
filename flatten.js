@@ -17,3 +17,17 @@ const assertArraysEqual = function(array1, array2) {
     console.log(`🛑🛑🛑Assertion failed: ${array1} !== ${array2}`);
   }
 };
+
+const flatten = (nestedArray) => {
+  const flattened = [];
+  for (const value of nestedArray) {
+    if (Array.isArray(value)) {
+      value.forEach(elem => flattened.push(elem));
+    } else {
+      flattened.push(value);
+    }
+  }
+  return flattened;
+};
+
+assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5, 6]);
