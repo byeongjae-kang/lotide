@@ -21,3 +21,5 @@ const countLetters = function(letters) {
 
 };
 console.log(countLetters("byeongjae kang"));
+
+module.exports = countLetters;
