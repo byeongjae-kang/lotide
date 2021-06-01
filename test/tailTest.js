@@ -1,19 +1,23 @@
-const assertEqual = require(`../assertEqual`);
+const assert = require('chai').assert;
 const tail = require(`../tail`);
 
+describe('#tail', () => {
 
-const result = tail(["Hello", "Lighthouse", "Labs"]);
-assertEqual(result, ["Lighthouse", "Labs"]);
+  it('return ["Lighthouse", "Labs"] for ["Hello", "Lighthouse", "Labs"]', () => {
+    const result = tail(["Hello", "Lighthouse", "Labs"]);
+    assert.deepEqual(result, ["Lighthouse", "Labs"]);
+  });
 
-const words = ["Yo Yo", "Lighthouse", "Labs"];
-tail(words); // no need to capture the return value since we are not checking it
-assertEqual(words.length, 3);
+  it('return 2 for ["Yo Yo", "Lighthouse", "Labs"]', () => {
+    const result = tail(["Yo Yo", "Lighthouse", "Labs"]);
+    assert.strictEqual(result.length, 2);
+  });
 
-// Test Case 1: Check the returned array elements
-// Instead of comparing arrays, a workaround to this limitation could be to compare the values of the returned tail array directly, like this:
+  it('return 2, "Lighthouse", "Labs" for 3test below', () => {
+    const result = tail(["Hello", "Lighthouse", "Labs"]);
+    assert.strictEqual(result.length, 2);
+    assert.strictEqual(result[0], "Lighthouse");
+    assert.strictEqual(result[1], "Labs");
+  });
 
-
-const result2 = tail(["Hello", "Lighthouse", "Labs"]);
-assertEqual(result2.length, 2); // ensure we get back two elements
-assertEqual(result2[0], "Lighthouse"); // ensure first element is "Lighthouse"
-assertEqual(result2[1], "Labs"); // ensure second element is "Labs"
+});
