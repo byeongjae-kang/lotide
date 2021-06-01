@@ -1,7 +1,7 @@
 {
-  "name": "lotide",
+  "name": "@byeongjae-kang/lotide",
   "version": "1.0.0",
-  "description": "",
+  "description": "this is for learning purpose.",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/byeongjae-kang/lotide.git"
   },
-  "author": "",
+  "author": "byeongjae-kang",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/byeongjae-kang/lotide/issues"
